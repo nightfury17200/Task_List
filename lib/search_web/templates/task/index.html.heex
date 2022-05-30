@@ -2,7 +2,7 @@
 
   <%= form_for @conn, Routes.task_path(@conn, :index), [method: :get], fn f -> %>
   <%= search_input f, :query %>
-  <%= checkbox f, :completed, value: "1"  %>
+  <%= checkbox f, :completed, value: true %>
   <%= submit "Search" %>
   <% end %>
 <table>

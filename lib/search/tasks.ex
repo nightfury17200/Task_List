@@ -17,19 +17,8 @@ defmodule Search.Tasks do
       [%Task{}, ...]
 
   """
-  def list_tasks(filters \\ []) do
-    query = from(task in Task)
-    IO.inspect filters
-    filters
-    |> Enum.reduce(query, fn filter, query_acc ->
-      case filter do
-        {:query, query} ->
-          from task in query_acc, where: ilike(task.description, ^query)
-        {:completed, "1"} ->
-          from task in query_acc, where: task.completed == true
-        _ -> query_acc
-      end
-    end)
+  def list_tasks(params) do
+    Task.search(params)
     |> Repo.all()
   end
 

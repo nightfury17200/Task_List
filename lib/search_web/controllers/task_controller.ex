@@ -6,12 +6,8 @@ defmodule SearchWeb.TaskController do
 
 
   def index(conn, params) do
-    completed = Map.get(params, "completed")
-    query = Map.get(params, "query")
     IO.inspect params, label: :params
-
-    tasks = Tasks.list_tasks(query: query, completed: completed)
-
+    tasks = Tasks.list_tasks(params)
     render(conn, "index.html", tasks: tasks)
   end
 
