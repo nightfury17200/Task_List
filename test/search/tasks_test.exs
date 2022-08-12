@@ -12,6 +12,7 @@ defmodule Search.TasksTest do
 
     test "list_tasks/0 returns all tasks" do
       task = task_fixture()
+      IO.inspect(Tasks.list_tasks())
       assert Tasks.list_tasks() == [task]
     end
 

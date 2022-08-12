@@ -6,6 +6,7 @@ defmodule SearchWeb.Router do
     plug :fetch_session
     plug :fetch_live_flash
     plug :put_root_layout, {SearchWeb.LayoutView, :root}
+    plug Plug.Telemetry, event_prefix: [:my_app, :plug]
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end

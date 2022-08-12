@@ -5,7 +5,7 @@ defmodule Search.MixProject do
     [
       app: :search,
       version: "0.1.0",
-      elixir: "~> 1.12",
+      elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -48,7 +48,8 @@ defmodule Search.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:telemetry, "~> 1.0"}
     ]
   end
 
